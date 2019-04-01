@@ -1,2 +1,80 @@
-# dasi
-Deep Learning Assisted Stokes Inversion
+# Deep Learning Assisted Stokes Inversion
+
+## Introduction
+
+Spectropolarimetric inversions are routinely used in the field of Solar Physics 
+for the extraction of physical information from observations. The application 
+to two-dimensional fields of view often requires the parallelization of the 
+inversion codes. Still, the time spent on the process is very large.
+DASI (standing for Deep learning Assisted Stokes Inversion) is a new 
+inversion code based on the application of convolutional neural 
+networks that can provide the thermodynamical and magnetic properties 
+of two-dimensional maps instantaneously.
+We use two different architectures using fully convolutional neural 
+networks. We use synthetic Stokes profiles obtained from two numerical 
+simulations of different structures of the solar atmosphere for training.
+
+This repository is the release version of DASI. We provide both
+training and evaluation scripts.
+
+
+## Datasets
+
+If you want to retrain any of the two architectures you will need to download
+the training data from https://owncloud.iac.es/index.php/s/bGkJrn8mCuB4j9n
+
+For evaluation, you can use your own Hinode dataset. However, we provide 
+a patch of the active region AR10933 that can be downloaded from the same
+server.
+
+## Encoder-decoder architecture
+
+### Dependencies
+
+    numpy
+    h5py
+    scipy
+    tqdm
+    nvidia_smi
+    pytorch
+
+Within an Anaconda environment, standard packages can be installed with
+
+    conda install numpy h5py scipy tqdm
+
+`pytorch` can be installed following the instructions on http://pytorch.org
+
+`nvidia_smi` can be installed using the recipe from fastai
+
+    conda install nvidia-ml-py3 -c fastai
+
+### Training
+
+
+Training the encoder-decoder architectures simply requires to run the training as:
+
+    python train_encdec.py
+
+If you have an NVIDIA GPU on your system, it will make use of it to accelerate
+the computations. If not, prepare to wait for a long time. Typical running times
+in a P100 GPU are 90 seconds per epoch. A training with 50 epochs will last
+for slightly longer than an hour.
+
+
+## Evaluation
+
+The evaluation of this architecture can be easily done by typing:
+
+    python evaluate_encdec.py
+
+It will generate figures and an HDF5 file with the output. You can easily
+modify this script to read your own dataset. 
+
+
+## Concatenate architectures
+
+### Dependencies
+
+### Training
+
+### Evaluation
