@@ -99,6 +99,4 @@ The evaluation of this architecture can be easily done by typing:
 
     python evaluate_concat.py
 
-It will generate figures and an HDF5 file with the output. You can easily
-modify this script to read your own dataset. 
-
+It will generate figures and an numpy file with the output.
