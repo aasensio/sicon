@@ -71,10 +71,34 @@ It will generate figures and an HDF5 file with the output. You can easily
 modify this script to read your own dataset. 
 
 
-## Concatenate architectures
+## Concatenate architecture
 
 ### Dependencies
 
+    numpy
+    h5py
+    tensorflow
+    keras
+
+Within an Anaconda environment, depending if you have a GPU or not the command
+will be different:
+    
+    conda install tensorflow keras
+
+    conda install tensorflow-gpu 
+
 ### Training
 
+Training the encoder-decoder architectures simply requires to run the training as:
+
+    python train_concat.py
+
+
 ### Evaluation
+The evaluation of this architecture can be easily done by typing:
+
+    python evaluate_concat.py
+
+It will generate figures and an HDF5 file with the output. You can easily
+modify this script to read your own dataset. 
+
