@@ -77,6 +77,7 @@ class deep_network(object):
 
 
     def plot_results(self):
+        print("Saving figures...")
 
         import matplotlib as mpl
         mpl.use('Agg')
@@ -99,18 +100,11 @@ class deep_network(object):
             extra = str(magnitud)
             plt.figure(figsize=(6*2,5*2))
             nlogtau = np.arange(-3.0,0.5,0.5)[::-1]
-            print(nlogtau)
-            zmira = 0
-            # print(zz[zmira])
             for ii in range(4):
                 plt.subplot(2,2,ii+1)
                 plt.title(r'log$\tau$={0}'.format(nlogtau[int(ii*2)]))
-                # ploti = histo_opt(salida[0,int(ii*2),:,:])
-                # maxi = np.max([np.abs(ploti.min()),np.abs(ploti.max())])
-                
                 plt.imshow(np.flipud(self.out[0,:,:,magnitud*nq+int(ii*2)])*mapscale[magnitud],
                     interpolation='None',origin='lower',extent=extent,cmap=maplist[magnitud],vmax=maxilist[magnitud],vmin=minilist[magnitud])
-
                 cb = plt.colorbar(shrink=1.0*colorzoom, pad=0.02)
                 cb.set_label(r""+magTitle[magnitud], labelpad=8., y=0.5, fontsize=12.)
                 if ii ==2 or ii==3:
@@ -119,7 +113,6 @@ class deep_network(object):
                     plt.ylabel('Distance [arcsec]')
 
             plt.tight_layout()
-            # plt.subplots_adjust(top=0.85)
             plt.savefig(name+nombre[magnitud]+'.pdf',dpi=100)
             
 if (__name__ == '__main__'):
