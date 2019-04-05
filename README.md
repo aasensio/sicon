@@ -6,7 +6,7 @@ Spectropolarimetric inversions are routinely used in the field of Solar Physics
 for the extraction of physical information from observations. The application 
 to two-dimensional fields of view often requires the parallelization of the 
 inversion codes. Still, the time spent on the process is very large.
-DASI (standing for Deep learning Assisted Stokes Inversion) is a new 
+SICON (standing for Stokes Inversion based on COnvolutional Neural networks) is a new 
 inversion code based on the application of convolutional neural 
 networks that can provide the thermodynamical and magnetic properties 
 of two-dimensional maps instantaneously.
@@ -14,7 +14,7 @@ We use two different architectures using fully convolutional neural
 networks. We use synthetic Stokes profiles obtained from two numerical 
 simulations of different structures of the solar atmosphere for training.
 
-This repository is the release version of DASI. We provide both
+This repository is the release version of SICON. We provide both
 training and evaluation scripts.
 
 
