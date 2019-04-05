@@ -1,4 +1,4 @@
-# Deep Learning Assisted Stokes Inversion
+# SICON: Stokes Inversion based on COnvolutional Neural networks
 
 ## Introduction
 
