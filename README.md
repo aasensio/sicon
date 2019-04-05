@@ -1,4 +1,4 @@
-# SICON: Stokes Inversion based on COnvolutional Neural networks
+# Stokes inversion based on convolutional neural networks
 
 ## Introduction
 
