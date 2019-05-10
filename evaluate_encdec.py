@@ -78,7 +78,7 @@ class deep_3d_inversor(object):
         # Normalize QUV
         self.peak_val = np.max(np.abs(self.stokes / self.stokes[0:1,0:1,:,:]), axis=1)
         self.peak_val[0,:,:] = 1.0
-        self.peak_val[self.peak_val < 0.03] = 0.03
+        self.peak_val[self.peak_val < 0.1] = 0.1
         
         for i in range(3):
             self.stokes[1+i,:,:,:] /= self.peak_val[1+i,None,:,:]

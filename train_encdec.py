@@ -35,7 +35,7 @@ class dataset_spot(torch.utils.data.Dataset):
         self.stokes += np.random.normal(loc=0.0, scale=noise_scale, size=self.stokes.shape)
         self.peak_val = np.max(np.abs(self.stokes / self.stokes[:,:,0:1,0:1]), axis=3)
         self.peak_val[:,:,0] = 1.0
-        self.peak_val[self.peak_val < 0.03] = 0.03
+        self.peak_val[self.peak_val < 0.005] = 0.005
         
         for i in range(3):
             self.stokes[:,:,1+i,:] /= self.peak_val[:,:,1+i,None]
@@ -62,7 +62,7 @@ class dataset_spot(torch.utils.data.Dataset):
         self.stokes_inv += np.random.normal(loc=0.0, scale=noise_scale, size=self.stokes_inv.shape)
         self.peak_val_inv = np.max(np.abs(self.stokes_inv / self.stokes_inv[:,:,0:1,0:1]), axis=3)
         self.peak_val_inv[:,:,0] = 1.0
-        self.peak_val_inv[self.peak_val_inv < 0.03] = 0.03
+        self.peak_val_inv[self.peak_val_inv < 0.005] = 0.005
 
         for i in range(3):
             self.stokes_inv[:,:,1+i,:] /= self.peak_val_inv[:,:,1+i,None]
@@ -89,7 +89,7 @@ class dataset_spot(torch.utils.data.Dataset):
         self.stokes_cheung += np.random.normal(loc=0.0, scale=noise_scale, size=self.stokes_cheung.shape)
         self.peak_val = np.max(np.abs(self.stokes_cheung / self.stokes_cheung[:,:,0:1,0:1]), axis=3)
         self.peak_val[:,:,0] = 1.0       
-        self.peak_val[self.peak_val < 0.03] = 0.03
+        self.peak_val[self.peak_val < 0.005] = 0.005
         
         for i in range(3):
             self.stokes_cheung[:,:,1+i,:] /= self.peak_val[:,:,1+i,None]
