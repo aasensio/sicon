@@ -3,7 +3,7 @@
 [![github](https://img.shields.io/badge/GitHub-aasensio%2Fsicon-blue.svg?style=flat)](https://github.com/aasensio/sicon)
 [![license](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/aasensio/sicon/blob/master/LICENSE)
 [![ADS](https://img.shields.io/badge/ADS-arXiv190403714A-red.svg)](https://ui.adsabs.harvard.edu/abs/2019arXiv190403714A/abstract)
-[![arxiv](http://img.shields.io/badge/arXiv-1904.03714-orange.svg?style=flat)](https://arxiv.org/abs/1904.03714)
+[![arxiv](http://img.shields.io/badge/arXiv-1904.3714-orange.svg?style=flat)](https://arxiv.org/abs/1904.03714)
 
 ## Introduction
 
