@@ -44,7 +44,7 @@ class dataset_spot(torch.utils.data.Dataset):
 
         scale = np.log10(self.peak_val[:,:,1:])
 
-        scale -= np.mean(scale, axis=(1,2))[:,None,None]
+        scale -= np.mean(scale, axis=(0,1))[None,None,:]
         
         self.stokes = np.vstack([np.transpose(self.stokes, axes=(2,0,1)), np.transpose(scale, axes=(2,0,1))])
 
@@ -71,7 +71,7 @@ class dataset_spot(torch.utils.data.Dataset):
 
         scale = np.log10(self.peak_val_inv[:,:,1:])
 
-        scale -= np.mean(scale, axis=(1,2))[:,None,None]        
+        scale -= np.mean(scale, axis=(0,1))[None,None,:]        
         
         self.stokes_inv = np.vstack([np.transpose(self.stokes_inv, axes=(2,0,1)), np.transpose(scale, axes=(2,0,1))])
 
